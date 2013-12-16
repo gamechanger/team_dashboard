@@ -67,5 +67,7 @@ TeamDashboard::Application.configure do
   # config.active_record.auto_explain_threshold_in_seconds = 0.5
 
   config.eager_load = true
-
+  config.middleware.insert_after(::Rack::Runtime, "::Rack::Auth::Basic") do |u, p|
+    [u, p] == [ENV['MY_SITE_USERNAME'], ENV['MY_SITE_PASSWORD']]
+  end
 end
