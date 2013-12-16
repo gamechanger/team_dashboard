@@ -9,7 +9,7 @@ gem "sass-rails", "~> 4.0.0"
 gem "bootstrap-sass", "~> 2.3.2"
 gem "bootswatch-rails"
 
-gem "mysql2"
+gem "pg"
 
 # on windows replace with thin gem
 gem "unicorn"
@@ -41,3 +41,5 @@ group :development do
   gem "binding_of_caller"
   gem "foreman"
 end
+
+gem 'rails_12factor', group: :production

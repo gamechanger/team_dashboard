@@ -83,9 +83,9 @@ GEM
     multi_json (1.8.2)
     multi_xml (0.5.1)
     multipart-post (1.2.0)
-    mysql2 (0.3.13)
     newrelic_api (1.2.4)
     nokogiri (1.5.5)
+    pg (0.17.0)
     polyglot (0.3.3)
     rack (1.5.2)
     rack-test (0.6.2)
@@ -100,6 +100,11 @@ GEM
       sprockets-rails (~> 2.0.0)
     rails-observers (0.1.2)
       activemodel (~> 4.0)
+    rails_12factor (0.0.2)
+      rails_serve_static_assets
+      rails_stdout_logging
+    rails_serve_static_assets (0.0.1)
+    rails_stdout_logging (0.0.3)
     railties (4.0.0)
       actionpack (= 4.0.0)
       activesupport (= 4.0.0)
@@ -169,10 +174,11 @@ DEPENDENCIES
   libxml-ruby
   mocha
   multi_xml
-  mysql2
   newrelic_api
   nokogiri
+  pg
   rails (~> 4.0.0)
+  rails_12factor
   rspec-rails
   sass-rails (~> 4.0.0)
   therubyracer
