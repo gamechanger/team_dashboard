@@ -1,7 +1,7 @@
 # based on https://devcenter.heroku.com/articles/rails-unicorn
 worker_processes Integer(ENV["WEB_CONCURRENCY"] || 3)
 preload_app true
-timeout 30
+timeout 180
 listen Integer(ENV["PORT"] || 3000)
 
 after_fork do |server, worker|
@@ -11,7 +11,7 @@ after_fork do |server, worker|
     Process.kill 'QUIT', Process.pid
   end
 
-	if defined?(ActiveRecord::Base)
+  if defined?(ActiveRecord::Base)
     ActiveRecord::Base.establish_connection
     puts 'Connected to ActiveRecord'
   end
