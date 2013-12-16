@@ -18,7 +18,7 @@ module Sources
         server_url = widget.settings.fetch(:server_url)
         result     = request_build_status(server_url, project)
         {
-          :label             => result["slug"],
+          :label             => (result["slug"][/\/(.*)$/, 1] or result["slug"]),
           :last_build_time   => result["last_build_finished_at"],
           :last_build_status => status(result["last_build_status"]),
           :current_status    => current_status(result["last_build_finished_at"])
