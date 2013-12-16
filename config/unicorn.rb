@@ -1,5 +1,5 @@
 # based on https://devcenter.heroku.com/articles/rails-unicorn
-worker_processes Integer(ENV["WEB_CONCURRENCY"] || 3)
+worker_processes Integer(ENV["WEB_CONCURRENCY"] || 10)
 preload_app true
 timeout 180
 listen Integer(ENV["PORT"] || 3000)
